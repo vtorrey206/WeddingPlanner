@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="~/css/style.css"/>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<a href="/logout">Log Out</a>
+<div class="text-center">
+   @model List<Wedding>
+    <h3>Welcome to the <span class="green">Wedding</span> Planner</h3>
+    
+    <div class="row">
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th>Wedding</th>
+                    <th>Date</th>
+                    <th>Guest</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(Wedding wed in ViewBag.AllWeddings)
+                {
+                    <tr>
+                        <td><a href="/info/@wed.WeddingId">@wed.WedderOne & @wed.WedderTwo</a></td>
+                        <td>@wed.Date</td>
+                        <td>@wed.Guest.Count</td>
+                        @if(wed.UserId == ViewBag.loggedin)
+                        {
+                            <td><a href="">Delete</a></td>
+                        }
+                        else
+                        {
+                            bool attending = false;
+                            @foreach (var i in wed.Guest)
+                            {
+                                @if(i.UserId == ViewBag.loggedIn)
+                                {
+                                    attending = true;
+                                }   
+                            }
+                            @if(attending == true)
+                            {
+                                <td><a href="">Un-RSVP</a></td>
+                            }
+                            else
+                            {
+                                <td><a href="/guest">RSVP</a></td>
+                            }
+                        }
+                    </tr>
+                    
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

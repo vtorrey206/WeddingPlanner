@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="~/css/style.css"/>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+<h1>WedderOne and WedderTwo's Wedding</h1><a href="/dashboard">Dashboard</a> | <a href="/logout">Log Out</a>
+<div>
+    @model List<Wedding>
+    <div class="row">
+        <div class="col">
+            <h5>Date: </h5>
+             <p>@g.Date</p>
+        </div>
+        <div class="col">
+        API HERE
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h2>Guest:</h2>
+             @foreach(var g in ViewBag.AllWeddings)
+             {
+            <p>@g.Guest</p>
+             }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="~/css/style.css"/>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<a href="/dashboard">Dashboard</a> | <a href="/logout">Log Out</a>
+<h1 class="rose">Plan Your <span class="burgandy">Wedding</span>!</h1>
+<div>
+    @model Wedding
+    <div class="row">
+        
+        <div class="col">
+            <form class="forms" asp-action="Create" asp-controller="Home" method="Post">
+                <span asp-validation-for="WedderOne"></span>
+                <h4>Wedder One</h4><input type="text" asp-for="WedderOne">
+                <span asp-validation-for="WedderTwo"></span>
+                <h4>Wedder Two</h4><input type="text" asp-for="WedderTwo">
+                <span asp-validation-for="Date"></span>
+                <h4>Date</h4><input type="date" asp-for="Date">
+                <span asp-validation-for="Address"></span>
+                <h4>Address:</h4><input type="text" asp-for="Address">
+                <input type="hidden" asp-for="UserId" value="@ViewBag.loggedIn"/>
+    <!-- Drop down ends here -->
+                <button type="submit" class="btn btn-unique">Create</button>
+            </form>
+    <!-- Form ends here -->
+        </div>
+        <h3>@ViewBag.loggedIn</h3>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+﻿<link rel="stylesheet" href="~/css/style.css"/>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    
+@model User
+
+    <div class="row">
+        
+        <div class="col">
+            <span class="burgandy"><h1>Register</h1></span>
+            <form class="regform" asp-action="Registering" asp-controller="Home" method="Post">
+
+            <span asp-validation-for="FirstName"></span>
+
+            <h4>First Name:</h4><input class="forms" type="text" asp-for="FirstName">
+
+            <span asp-validation-for="LastName"></span>
+
+            <h4>Last Name:</h4><input class="forms" type="text" asp-for="LastName">
+
+            <span asp-validation-for="Email"></span>
+
+            <h4>Email:</h4><input class="forms" type="email" asp-for="Email">
+
+            <span asp-validation-for="Password"></span>
+
+            <h4>Password:</h4><input class="forms" type="password" asp-for="Password">
+
+            <span asp-validation-for="Confirm"></span>
+
+            <h4>Confirm Password:</h4><input class="forms" type="password" asp-for="Confirm">
+
+            <button type="submit" class="btn btn-unique">Register!!</button>
+
+            </form>
+
+        </div>
+
+        <div class="col">
+            <span class="burgandy"><h1>Login</h1></span>
+            <form class="logform" asp-action="Logging" asp-controller="Home" method="Post">
+
+            <span asp-validation-for="Email"></span>
+
+            <h4>Email:</h1><input type="text" asp-for="Email">
+
+            <span asp-validation-for="Password"></span>
+
+            <h4>Password:</h1><input type="password" asp-for="Password">
+
+            <button type="submit" class="btn btn-unique">Login!!</button>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>

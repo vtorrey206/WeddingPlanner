@@ -1,0 +1,47 @@
+*{
+    margin: auto;
+}
+a{
+    color: #5C6C45;
+}
+table, th, td {
+    border: 3px dashed #5C6C45;
+    border-collapse: collapse;
+}
+th, td {
+padding: 5px;
+text-align: left;
+}
+
+.btn{
+    display: block;
+    margin-left: 230px;
+    background-color: #DFB4AE;
+    color: #3F1414;
+    margin-top: 20px;
+}
+
+.top {
+    background-color: #DFB4AE;
+    
+}
+h1{
+    margin-bottom: 20px;
+    vertical-align: top;
+}
+.burgandy{
+    color: #3F1414;
+}
+.logform{
+    margin-bottom: 15px;
+}
+h4{
+    margin-bottom: 15px;
+}
+.green{
+    color: #5C6C45;
+}
+.rose{
+    color: #DFB4AE;
+}
+
